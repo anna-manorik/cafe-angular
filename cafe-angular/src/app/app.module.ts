@@ -3,13 +3,22 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { Header } from './core/components/header/header.component';
-import { Footer } from './core/components/footer/footer.component';
+import { CoreModule } from './core/core.module';
+import { MenuModule } from './menu/menu.module';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent, Header, Footer],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    CoreModule,
+    MenuModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
