@@ -1,4 +1,15 @@
-
-<ul class="category-list">
-  <li *ngFor="let categoryName of categories"><button (click)="getDishes(categoryName)">{{ categoryName }}</button></li>
-</ul>
+<div class="category-list-conteiner">
+  
+  <ul class="category-list">
+    <li *ngFor="let category of categories">
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="getDishes(category.id)"
+      >
+        {{ category.title }}
+      </button>
+    </li>
+  </ul>
+  <mat-divider></mat-divider>
+</div>
