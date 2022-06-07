@@ -1,7 +1,22 @@
-.table{
-    border: 1px solid #000;
+.dishes-list-conteiner{
+    width: 1200px;
+    text-align: left;
+    padding: 20px;
+    margin: 0 auto;
 }
 
-.table th, td{
-    border: 1px solid #000;
+.table{
+    width: 500px;
+    padding: 10px;
+    border: 1px solid rgb(226, 226, 226);
+    border-radius: 10px;
+}
+
+.table tr{
+    padding: 10px;
+    background: #f9f8fa;
+}
+
+.table td, th{
+    padding: 10px;
 }
