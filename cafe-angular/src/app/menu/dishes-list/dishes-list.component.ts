@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { toArray } from 'rxjs';
 import { DataService } from '../../core/services/data.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { DataService } from '../../core/services/data.service';
 })
 
 export class DishesList implements OnInit {
-  title = 'dishes-list';
+  title: any;
   dishes: any;
 
   constructor(public service: DataService) {}
@@ -17,14 +18,18 @@ export class DishesList implements OnInit {
   ngOnInit() {
     this.service.getAllDishes().subscribe((response) => {
       this.dishes = response;
+      this.title = 'All';
     });
-    // getAllDishes()
   }
 
-  getDishes(categoryName: any){
-    this.service.getDishes(categoryName).subscribe((response) => {
-      console.log("dishes", response);
+  getDishes(categoryId: any){
+    this.service.getDishes(categoryId).subscribe((response) => {
       this.dishes = response;
+    });
+
+    this.service.getCategoryName(categoryId).subscribe((response: any) => {
+      // const array = toArray(response);
+      this.title = response[0].title;
     });
   }
 }
