@@ -4,38 +4,49 @@
       "id": 1,
       "title": "Meat dish 1",
       "discription": "Meat dish 1 info",
-      "category": "meats"
+      "price": "$20.00",
+      "categoryId": 1
     },
     {
       "id": 2,
       "title": "Meat dish 2",
       "discription": "Meat dish 2 info",
-      "category": "meats"
+      "price": "$25.00",
+      "categoryId": 1
     },
     {
       "id": 3,
       "title": "Fish dish 1",
       "discription": "Fish dish 1 info",
-      "category": "fishes"
+      "price": "$30.00",
+      "categoryId": 2
     },
     {
       "id": 4,
       "title": "Fish dish 2",
       "discription": "Fish dish 2 info",
-      "category": "fishes"
+      "price": "$35.00",
+      "categoryId": 2
     },
     {
       "id": 5,
       "title": "Drink 1",
       "discription": "Drink 1 info",
-      "category": "drinks"
+      "price": "$10.00",
+      "categoryId": 3
     },
     {
       "id": 6,
       "title": "Drink 2",
       "discription": "Drink 2 info",
-      "category": "drinks"
+      "price": "$12.00",
+      "categoryId": 3
     }
   ],
-  "categories": ["meats", "fishes", "drinks"]
+  "category": ["meats", "fishes", "drinks"],
+  "categories": [
+    { "id": 1, "title": "Meats" },
+    { "id": 2, "title": "Fishes" },
+    { "id": 3, "title": "Drinks" }
+  ]
 }
