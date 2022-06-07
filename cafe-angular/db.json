@@ -1,0 +1,41 @@
+{
+  "dishes": [
+    {
+      "id": 1,
+      "title": "Meat dish 1",
+      "discription": "Meat dish 1 info",
+      "category": "meats"
+    },
+    {
+      "id": 2,
+      "title": "Meat dish 2",
+      "discription": "Meat dish 2 info",
+      "category": "meats"
+    },
+    {
+      "id": 3,
+      "title": "Fish dish 1",
+      "discription": "Fish dish 1 info",
+      "category": "fishes"
+    },
+    {
+      "id": 4,
+      "title": "Fish dish 2",
+      "discription": "Fish dish 2 info",
+      "category": "fishes"
+    },
+    {
+      "id": 5,
+      "title": "Drink 1",
+      "discription": "Drink 1 info",
+      "category": "drinks"
+    },
+    {
+      "id": 6,
+      "title": "Drink 2",
+      "discription": "Drink 2 info",
+      "category": "drinks"
+    }
+  ],
+  "categories": ["meats", "fishes", "drinks"]
+}
