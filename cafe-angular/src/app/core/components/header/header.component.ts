@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 
 export class Header {
-  title = 'header';
+  title = 'Cafe-Angular';
 }
