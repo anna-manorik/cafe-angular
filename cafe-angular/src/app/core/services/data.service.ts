@@ -14,13 +14,18 @@ export class DataService {
     .get('http://localhost:3000/categories');
   }
 
+  getCategoryName(categoryId: any) {
+    return this.http
+    .get(`http://localhost:3000/categories?id=${categoryId}`);
+  }
+
   getAllDishes() {
     return this.http
     .get('http://localhost:3000/dishes')
   }
 
-  getDishes(categoryName: any) {
+  getDishes(categoryId: any) {
     return this.http
-    .get(`http://localhost:3000/dishes?category=${categoryName}`)
+    .get(`http://localhost:3000/dishes?categoryId=${categoryId}`)
   }
 }
