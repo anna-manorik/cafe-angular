@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 
 export class Footer {
-  title = 'footer';
+  title = 'cafe-angular';
 }
