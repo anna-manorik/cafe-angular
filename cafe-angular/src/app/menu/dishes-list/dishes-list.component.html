@@ -1,21 +1,30 @@
 <app-category-list (onClick)="getDishes($event)"></app-category-list>
 
-<h2>List of Dishes</h2>
- 
-<table class='table'>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Dish Info</th>
-      <th>Category</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let dish of dishes;">
-      <td>{{dish.title}}</td>
-      <td>{{dish.discription}}</td>
-      <td>{{dish.category}}</td>
-    </tr>
-  </tbody>
-</table>
 
+<div class="dishes-list-conteiner">
+  <button
+        mat-raised-button
+        color="primary"
+        (click)="ngOnInit()"
+      >
+        All dishes
+      </button>
+  <h2>List of Dishes: {{ title }}</h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Dish Info</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dish of dishes">
+        <td>{{ dish.title }}</td>
+        <td>{{ dish.discription }}</td>
+        <td>{{ dish.price }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
