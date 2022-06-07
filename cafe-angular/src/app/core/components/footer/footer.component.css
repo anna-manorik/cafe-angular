@@ -1,0 +1,10 @@
+.footer-conteiner{
+    width: 1200px;
+    height: 100px;
+    text-align: center;
+    padding: 20px;
+    margin: 0 auto;
+    border: 1px solid rgb(218, 217, 217);
+    border-radius: 5px;
+    background-color: #e8ddee;
+}
