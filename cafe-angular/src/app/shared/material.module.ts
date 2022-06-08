@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { MatDividerModule } from '@angular/material/divider';
 import { MatTableModule } from '@angular/material/table';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [],
-  imports: [MatButtonModule, MatDividerModule, MatTableModule],
-  exports: [MatButtonModule, MatDividerModule, MatTableModule],
+  imports: [MatButtonModule, MatTableModule, MatDialogModule],
+  exports: [MatButtonModule, MatTableModule, MatDialogModule],
   providers: [],
   bootstrap: [],
 })
