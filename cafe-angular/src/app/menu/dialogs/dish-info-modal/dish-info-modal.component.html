@@ -1,0 +1,14 @@
+<div class="dishInfo-modal-conteiner">
+  <h1 mat-dialog-title>{{ dishInfo.title }}</h1>
+  <div mat-dialog-content class="dishInfo-modal-flex">
+    <img src="{{ dishInfo.image }}" class="dishInfo-modal-img" />
+    <div>
+      <p><b>Name:</b> {{ dishInfo.title }}</p>
+      <p><b>Info:</b> {{ dishInfo.discription }}</p>
+      <p><b>Price:</b> {{ dishInfo.price }}</p>
+    </div>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button mat-dialog-close (click)="closeDialog()">Close</button>
+  </div>
+</div>
