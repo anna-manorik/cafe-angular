@@ -28,4 +28,9 @@ export class DataService {
     return this.http
     .get(`http://localhost:3000/dishes?categoryId=${categoryId}`)
   }
+
+  getDishInfo(dishId: any) {
+    return this.http
+    .get(`http://localhost:3000/dishes?id=${dishId}`)
+  }
 }
