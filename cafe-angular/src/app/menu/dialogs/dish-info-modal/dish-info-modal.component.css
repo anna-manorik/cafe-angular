@@ -1,0 +1,19 @@
+h1{
+    margin: 0;
+    padding: 0;
+}
+
+.dishInfo-modal-conteiner{
+    width: 500px;
+    height: 100%;
+    padding: 20px;
+}
+
+.dishInfo-modal-img{
+    width: 280px;
+    padding: 0 20px 20px 0;
+}
+
+.dishInfo-modal-flex{
+    display: flex;
+}
