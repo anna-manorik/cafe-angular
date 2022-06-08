@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { toArray } from 'rxjs';
 import { DataService } from '../../core/services/data.service';
+import { MatDialog } from '@angular/material/dialog';
+import { DishInfoModal } from '../dialogs/dish-info-modal/dish-info-modal.component';
 
 @Component({
   selector: 'app-dishes-list',
   templateUrl: './dishes-list.component.html',
   styleUrls: ['./dishes-list.component.css'],
-  providers:[DataService],
+  providers: [DataService],
 })
-
 export class DishesList implements OnInit {
   title: any;
   dishes: any;
 
-  constructor(public service: DataService) {}
+  constructor(public service: DataService, public dialog: MatDialog) {}
 
   ngOnInit() {
     this.service.getAllDishes().subscribe((response) => {
@@ -22,14 +22,18 @@ export class DishesList implements OnInit {
     });
   }
 
-  getDishes(categoryId: any){
+  getDishes(categoryId: any) {
     this.service.getDishes(categoryId).subscribe((response) => {
       this.dishes = response;
     });
 
     this.service.getCategoryName(categoryId).subscribe((response: any) => {
-      // const array = toArray(response);
       this.title = response[0].title;
     });
+  }
+
+  openDialog(dishId: any) {
+    let dialogRef = this.dialog.open(DishInfoModal);
+    dialogRef.componentInstance.dishId = dishId;
   }
 }
