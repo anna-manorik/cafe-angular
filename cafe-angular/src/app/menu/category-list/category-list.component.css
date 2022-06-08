@@ -19,3 +19,7 @@
   padding: 20px;
 }
 
+.category-list button:active {
+  background: #560977;
+}
+
