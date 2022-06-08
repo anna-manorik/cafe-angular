@@ -5,6 +5,7 @@
       "title": "Meat dish 1",
       "discription": "Meat dish 1 info",
       "price": "$20.00",
+      "image": "https://papigutto.com.ua/wp-content/uploads/2016/07/Screenshot_408.jpg",
       "categoryId": 1
     },
     {
@@ -12,6 +13,7 @@
       "title": "Meat dish 2",
       "discription": "Meat dish 2 info",
       "price": "$25.00",
+      "image": "https://papigutto.com.ua/wp-content/uploads/2016/07/Screenshot_408.jpg",
       "categoryId": 1
     },
     {
@@ -19,6 +21,7 @@
       "title": "Fish dish 1",
       "discription": "Fish dish 1 info",
       "price": "$30.00",
+      "image": "https://beirut.com.ua/wp-content/uploads/2020/06/riba-dorodo.jpg",
       "categoryId": 2
     },
     {
@@ -26,6 +29,7 @@
       "title": "Fish dish 2",
       "discription": "Fish dish 2 info",
       "price": "$35.00",
+      "image": "https://beirut.com.ua/wp-content/uploads/2020/06/riba-dorodo.jpg",
       "categoryId": 2
     },
     {
@@ -33,6 +37,7 @@
       "title": "Drink 1",
       "discription": "Drink 1 info",
       "price": "$10.00",
+      "image": "https://www.edim.tv/img/large/irish-cocktail.jpg",
       "categoryId": 3
     },
     {
@@ -40,10 +45,10 @@
       "title": "Drink 2",
       "discription": "Drink 2 info",
       "price": "$12.00",
+      "image": "https://www.edim.tv/img/large/irish-cocktail.jpg",
       "categoryId": 3
     }
   ],
-  "category": ["meats", "fishes", "drinks"],
   "categories": [
     { "id": 1, "title": "Meats" },
     { "id": 2, "title": "Fishes" },
