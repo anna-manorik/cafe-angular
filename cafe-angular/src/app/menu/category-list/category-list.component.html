@@ -1,8 +1,8 @@
 <div class="category-list-conteiner">
-  
   <ul class="category-list">
     <li *ngFor="let category of categories">
       <button
+        routerLink='/dishes/{{category.id}}'
         mat-raised-button
         color="primary"
         (click)="getDishes(category.id)"
@@ -11,5 +11,4 @@
       </button>
     </li>
   </ul>
-  <mat-divider></mat-divider>
 </div>
