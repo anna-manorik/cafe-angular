@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../../core/services/data.service';
 import { MatDialogRef } from '@angular/material/dialog';
+import { Dish } from '../../../shared/classes/dish/dish';
 
 @Component({
   selector: 'dish-adding-modal',
@@ -8,16 +9,28 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./dish-adding-modal.component.css'],
 })
 
-export class DishAddingModal {
-  dishId: any;
-  dishInfo: any;
+// export class Dish {
 
-  constructor(public service: DataService, public dialogRef: MatDialogRef<DishAddingModal>) {}
+// }
+export class DishAddingModal implements OnInit {
+  dish = new Dish();
+  categories: any;
+
+  constructor(
+    public service: DataService,
+    public dialogRef: MatDialogRef<DishAddingModal>
+  ) {}
 
   ngOnInit() {
-    this.service.getDishInfo(this.dishId).subscribe((response: any) => {
-      this.dishInfo = response[0];
-      console.log(response);
+    this.service.getCategories().subscribe((response: any) => {
+      this.categories = response;
+    });
+  }
+
+  addDish() {
+    console.log(this.dish);
+    this.service.addDish(this.dish).subscribe((data) => {
+      // console.log(data)
     });
   }
 
