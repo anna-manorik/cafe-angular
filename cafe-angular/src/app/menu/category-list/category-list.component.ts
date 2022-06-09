@@ -7,6 +7,7 @@ import { DataService } from '../../core/services/data.service';
   styleUrls: ['./category-list.component.css'],
   providers: [DataService],
 })
+
 export class CategoryList implements OnInit {
   title = 'category-list';
   categories: any;
@@ -14,6 +15,7 @@ export class CategoryList implements OnInit {
   constructor(public service: DataService) {}
 
   @Output() onClick = new EventEmitter();
+  
 
   ngOnInit() {
     this.service.getCategories().subscribe((response: any) => {
@@ -24,4 +26,5 @@ export class CategoryList implements OnInit {
   getDishes(categoryName: any) {
     this.onClick.emit(categoryName);
   }
+
 }
