@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DataService } from '../../services/data.service';
+import { CategoryAddingModal } from '../../../menu/dialogs/category-adding-modal/category-adding-modal.component';
 import { DishAddingModal } from '../../../menu/dialogs/dish-adding-modal/dish-adding-modal.component';
 
 @Component({
@@ -13,7 +14,11 @@ export class Header {
 
   constructor(public service: DataService, public dialog: MatDialog) {}
 
-  openDialog() {
+  openDialogCategory() {
+    this.dialog.open(CategoryAddingModal);
+  }
+
+  openDialogDish() {
     this.dialog.open(DishAddingModal);
   }
 }
