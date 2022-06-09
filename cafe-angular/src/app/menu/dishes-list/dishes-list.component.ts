@@ -22,18 +22,27 @@ export class DishesList implements OnInit {
     });
   }
 
+  getAllDishes() {
+    this.service.getAllDishes().subscribe((response) => {
+      this.dishes = response;
+      this.title = 'All';
+    });
+  }
+
   getDishes(categoryId: any) {
     this.service.getDishes(categoryId).subscribe((response) => {
       this.dishes = response;
     });
 
-    this.service.getCategoryName(categoryId).subscribe((response: any) => {
+    this.service.getCategoryById(categoryId).subscribe((response: any) => {
       this.title = response[0].title;
     });
   }
 
   openDialog(dishId: any) {
-    let dialogRef = this.dialog.open(DishInfoModal);
-    dialogRef.componentInstance.dishId = dishId;
+    let dialogRef = this.dialog.open(DishInfoModal, {
+      data: dishId,
+    });
+    dialogRef.componentInstance.dishId = dishId; // !!!! remove
   }
 }
