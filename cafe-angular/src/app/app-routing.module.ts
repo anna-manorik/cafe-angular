@@ -4,7 +4,7 @@ import { DishesList } from './menu/dishes-list/dishes-list.component';
 import { PageNotFound } from './menu/pages/notFoundPage/pageNotFound.component';
 
 const routes: Routes = [
-  { path: '', component: DishesList },
+  { path: '', component: DishesList}, // redirectTo: ''
   { path: 'all-dishes', component: DishesList },
   { path: 'dishes/:id', component: DishesList },
   { path: '**', component: PageNotFound },
