@@ -1,9 +1,9 @@
-<app-category-list (onClick)="getDishes($event)"></app-category-list>
+<app-category-list (onClick)="getDishes($event)" (onClick2)="getAllDishes()"></app-category-list>
 
 <div class="dishes-list-conteiner">
-  <button routerLink='/all-dishes' mat-raised-button color="primary" (click)="ngOnInit()">
+  <!-- <button routerLink='/all-dishes' mat-raised-button color="primary" (click)="ngOnInit()">
     All dishes
-  </button>
+  </button> -->
 
   <h2>List of Dishes: {{ title }}</h2>
 
@@ -20,7 +20,7 @@
       <tr *ngFor="let dish of dishes">
         <td>{{ dish.title }}</td>
         <td>{{ dish.discription }}</td>
-        <td>{{ dish.price }}</td>
+        <td>${{ dish.price }}</td>
         <td><a mat-button (click)="openDialog(dish.id)">View details</a></td>
       </tr>
     </tbody>
