@@ -1,8 +1,17 @@
 <div class="category-list-conteiner">
   <ul class="category-list">
+    <li>
+      <button
+        routerLink="/all-dishes"
+        mat-raised-button
+        color="primary"
+      >
+        All dishes
+      </button>
+    </li>
     <li *ngFor="let category of categories">
       <button
-        routerLink='/dishes/{{category.id}}'
+        [routerLink]="'/dishes/'+category.id"
         mat-raised-button
         color="primary"
         (click)="getDishes(category.id)"
