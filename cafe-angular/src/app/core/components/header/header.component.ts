@@ -11,11 +11,21 @@ import { DishAddingModal } from '../../../menu/dialogs/dish-adding-modal/dish-ad
 })
 export class Header {
   title = 'Cafe-Angular';
+  categories: any;
 
   constructor(public service: DataService, public dialog: MatDialog) {}
 
   openDialogCategory() {
     this.dialog.open(CategoryAddingModal);
+
+    // dialogRef.afterClosed().subscribe((result) => {
+    //   this.service.getCategories().subscribe((response: any) => {
+    //     // console.log(response)
+    //     // console.log(this.service.updateCategories);
+    //     // this.service.updateCategories.next(response);
+    //     // console.log(this.service.updateCategories);
+    //   });
+    // });
   }
 
   openDialogDish() {
