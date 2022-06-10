@@ -5,6 +5,12 @@
         <li><button mat-raised-button color="warn" (click)="openDialogCategory()">ADD CATEGORY</button></li>
         <li><button mat-raised-button color="warn" (click)="openDialogDish()">ADD DISH</button></li>
     </ul>
+    <mat-form-field appearance="fill">
+        <mat-label>Search dish: </mat-label>
+        <input matInput  />
+    </mat-form-field>
 </div>
+
+<!-- <app-category-list (onClick)="getDishes($event)" [categories]="categories"></app-category-list> -->
 
 
