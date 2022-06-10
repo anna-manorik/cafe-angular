@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { DataService } from '../../../core/services/data.service';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialogRef, MatDialogConfig } from '@angular/material/dialog';
 import { Category } from '../../../shared/classes/category/category';
 
 @Component({
@@ -9,9 +9,6 @@ import { Category } from '../../../shared/classes/category/category';
   styleUrls: ['./category-adding-modal.component.css'],
 })
 
-// export class Dish {
-
-// }
 export class CategoryAddingModal {
 category = new Category();
 
@@ -21,8 +18,8 @@ category = new Category();
   ) {}
 
   addCategory() {
-    this.service.addCategory(this.category).subscribe((data) => {
-      // console.log(data)
+    this.service.addCategory(this.category).subscribe(() => {
+      this.service.updateCategories.next();
     });
   }
 
