@@ -7,7 +7,7 @@ import { DishInfoModal } from '../dialogs/dish-info-modal/dish-info-modal.compon
   selector: 'app-dishes-list',
   templateUrl: './dishes-list.component.html',
   styleUrls: ['./dishes-list.component.css'],
-  providers: [DataService],
+  // providers: [DataService],
 })
 export class DishesList implements OnInit {
   title: any;
@@ -16,9 +16,10 @@ export class DishesList implements OnInit {
   constructor(public service: DataService, public dialog: MatDialog) {}
 
   ngOnInit() {
-    this.service.getAllDishes().subscribe((response) => {
-      this.dishes = response;
-      this.title = 'All';
+    this.getAllDishes();
+
+    this.service.updateDishes.subscribe(() => {
+      this.getAllDishes();
     });
   }
 
@@ -34,6 +35,12 @@ export class DishesList implements OnInit {
       this.dishes = response;
     });
 
+    this.service.updateDishes.subscribe(() => {
+      this.service.getDishes(categoryId).subscribe((response) => {
+        this.dishes = response;
+      });
+    });
+
     this.service.getCategoryById(categoryId).subscribe((response: any) => {
       this.title = response[0].title;
     });
@@ -44,5 +51,13 @@ export class DishesList implements OnInit {
       data: dishId,
     });
     dialogRef.componentInstance.dishId = dishId; // !!!! remove
+  }
+
+  deleteDish(dishId: number) {
+    console.log(dishId);
+    this.service.deleteDish(dishId).subscribe(() =>{
+      this.service.updateDishes.next();
+    });
+    
   }
 }
