@@ -1,12 +1,19 @@
-<div class="dish-adding-modal-conteiner">
-    <h1 mat-dialog-title>Add new Category</h1>
-    <div>
-      <label>Category Name: </label>
-      <input [(ngModel)]="category.title" />
-    </div>
-    <div mat-dialog-actions>
-      <button mat-button mat-dialog-close (click)="addCategory()">
-        Add New Category
-      </button>
-    </div>
+<div class="category-adding-modal-conteiner">
+  <h1 mat-dialog-title>Add new Category</h1>
+  <div class="category-adding-modal-inputs">
+    <mat-form-field appearance="fill">
+      <mat-label>Category Name: </mat-label>
+      <input matInput [(ngModel)]="category.title" />
+    </mat-form-field>
   </div>
+  <div mat-dialog-actions>
+    <button
+      mat-raised-button
+      color="warn"
+      mat-dialog-close
+      (click)="addCategory()"
+    >
+      Add New Category
+    </button>
+  </div>
+</div>
