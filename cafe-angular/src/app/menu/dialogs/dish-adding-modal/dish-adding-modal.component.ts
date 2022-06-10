@@ -9,9 +9,6 @@ import { Dish } from '../../../shared/classes/dish/dish';
   styleUrls: ['./dish-adding-modal.component.css'],
 })
 
-// export class Dish {
-
-// }
 export class DishAddingModal implements OnInit {
   dish = new Dish();
   categories: any;
@@ -28,9 +25,8 @@ export class DishAddingModal implements OnInit {
   }
 
   addDish() {
-    console.log(this.dish);
-    this.service.addDish(this.dish).subscribe((data) => {
-      // console.log(data)
+    this.service.addDish(this.dish).subscribe(() => {
+      this.service.updateDishes.next();
     });
   }
 
