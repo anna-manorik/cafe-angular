@@ -7,7 +7,7 @@
     </ul>
     <mat-form-field appearance="outline">
         <mat-label class="label-search">Search dish </mat-label>
-        <input matInput (ngModelChange)="searchDishes(searchValue)" [(ngModel)]="searchValue" />
+        <input matInput (change)="searchDishes(searchValue)" [(ngModel)]="searchValue" />
     </mat-form-field>
 </div>
 
