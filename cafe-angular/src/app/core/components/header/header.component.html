@@ -5,9 +5,9 @@
         <li><button mat-raised-button color="warn" (click)="openDialogCategory()">ADD CATEGORY</button></li>
         <li><button mat-raised-button color="warn" (click)="openDialogDish()">ADD DISH</button></li>
     </ul>
-    <mat-form-field appearance="fill">
-        <mat-label>Search dish: </mat-label>
-        <input matInput  />
+    <mat-form-field appearance="outline">
+        <mat-label class="label-search">Search dish </mat-label>
+        <input matInput (ngModelChange)="searchDishes(searchValue)" [(ngModel)]="searchValue" />
     </mat-form-field>
 </div>
 
