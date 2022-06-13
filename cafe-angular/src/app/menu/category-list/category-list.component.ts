@@ -1,5 +1,6 @@
-import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
+import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { DataService } from '../../core/services/data.service';
+import { ReplaySubject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-category-list',
@@ -8,9 +9,10 @@ import { DataService } from '../../core/services/data.service';
   // providers: [DataService],
 })
 
-export class CategoryList implements OnInit {
+export class CategoryList implements OnInit, OnDestroy {
   title = 'category-list';
   categories: any;
+  destroy: ReplaySubject<any> = new ReplaySubject<any>(1);
 
   constructor(public service: DataService) {}
 
@@ -19,20 +21,24 @@ export class CategoryList implements OnInit {
   ngOnInit() {
     this.getCategories();
 
-    this.service.updateCategories.subscribe(() => {
+    this.service.updateCategories.pipe(takeUntil(this.destroy)).subscribe(() => {
       this.getCategories();
     });
+  }
 
+  ngOnDestroy() {
+    this.destroy.next(null);
+    this.destroy.complete();
   }
 
   getCategories(){
-    this.service.getCategories().subscribe((response: any) => {
+    this.service.getCategories().pipe(takeUntil(this.destroy)).subscribe((response: any) => {
       this.categories = response;
     });
   }
 
-  getDishes(categoryName: any) {
-    this.onClick.emit(categoryName);
+  getDishes(categoryId: number) {
+    this.onClick.emit(categoryId);
   }
 
 }
