@@ -1,24 +1,25 @@
-.category-adding-modal-conteiner{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.category-adding-modal-conteiner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.category-adding-modal-inputs{
-    display: flex;
-    flex-direction: column;
+.category-adding-modal-inputs {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
 }
 
 ::ng-deep .mat-focused .mat-form-field-label {
-    color: #e8ddee !important;
-  }
-  
-  ::ng-deep.mat-form-field-underline {
-    background-color: #e8ddee !important;
-  }
-  
-  ::ng-deep.mat-form-field-ripple {
-    background-color: #e8ddee !important;
-  }
+  color: #e8ddee !important;
+}
+
+::ng-deep.mat-form-field-underline {
+  background-color: #e8ddee !important;
+}
+
+::ng-deep.mat-form-field-ripple {
+  background-color: #e8ddee !important;
+}
