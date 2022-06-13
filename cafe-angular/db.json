@@ -4,7 +4,7 @@
       "id": 1,
       "title": "Meat dish 1",
       "discription": "Meat dish 1 info",
-      "price": "20.00",
+      "price": "20",
       "image": "https://papigutto.com.ua/wp-content/uploads/2016/07/Screenshot_408.jpg",
       "categoryId": "1"
     },
@@ -12,7 +12,7 @@
       "id": 2,
       "title": "Meat dish 2",
       "discription": "Meat dish 2 info",
-      "price": "25.00",
+      "price": "25",
       "image": "https://papigutto.com.ua/wp-content/uploads/2016/07/Screenshot_408.jpg",
       "categoryId": "1"
     },
@@ -20,7 +20,7 @@
       "id": 3,
       "title": "Fish dish 1",
       "discription": "Fish dish 1 info",
-      "price": "30.00",
+      "price": "30",
       "image": "https://beirut.com.ua/wp-content/uploads/2020/06/riba-dorodo.jpg",
       "categoryId": "2"
     },
@@ -28,7 +28,7 @@
       "id": 4,
       "title": "Fish dish 2",
       "discription": "Fish dish 2 info",
-      "price": "35.00",
+      "price": "35",
       "image": "https://beirut.com.ua/wp-content/uploads/2020/06/riba-dorodo.jpg",
       "categoryId": "2"
     },
@@ -36,58 +36,72 @@
       "id": 5,
       "title": "Drink 1",
       "discription": "Drink 1 info",
-      "price": "10.00",
+      "price": "10",
       "image": "https://www.edim.tv/img/large/irish-cocktail.jpg",
       "categoryId": "3"
     },
     {
       "title": "Fried fish",
       "discription": "Fried fish info",
-      "price": "22.00",
+      "price": "22",
       "categoryId": "2",
       "id": 9
     },
     {
       "title": "Potato fried",
       "discription": "Potato fried info",
-      "price": "8.00",
+      "price": "8",
       "categoryId": "4",
       "id": 10
     },
     {
-      "title": "Fish with cream",
-      "discription": "Fish with cream info",
-      "price": "12.00",
-      "categoryId": 2,
-      "id": 11
-    },
-    {
-      "title": "Milk",
-      "discription": "sdfsdfsdf",
-      "price": "20",
-      "categoryId": 3,
-      "id": 12
-    },
-    {
-      "title": "Fish 4",
-      "discription": "Fish 4",
-      "price": "20.00",
-      "categoryId": 2,
+      "title": "Chicken",
+      "discription": "Chicken ffsddf",
+      "price": "15",
+      "categoryId": 1,
       "id": 14
     },
     {
-      "title": "Juice",
-      "discription": "sdfsdfds",
-      "price": "5.00",
-      "categoryId": 3,
+      "title": "Tomato",
+      "discription": "Tomato fresh",
+      "price": "5",
+      "categoryId": 4,
       "id": 15
     },
     {
-      "title": "Water",
-      "discription": "Water cold",
-      "price": "3.00",
+      "title": "Milk",
+      "discription": "Cold milk",
+      "price": "5",
       "categoryId": 3,
       "id": 16
+    },
+    {
+      "title": "Potato",
+      "price": "5",
+      "categoryId": 4,
+      "discription": null,
+      "id": 19
+    },
+    {
+      "title": "Dish 1",
+      "price": "7",
+      "categoryId": 5,
+      "discription": "Dish 1 info",
+      "id": 20
+    },
+    {
+      "title": "Juice",
+      "price": "4",
+      "categoryId": 3,
+      "discription": "Fresh juice",
+      "id": 21
+    },
+    {
+      "title": "Rabbit",
+      "price": "40",
+      "categoryId": 1,
+      "discription": "Rabbit with potato",
+      "id": 22
     }
   ],
   "categories": [
@@ -106,6 +120,10 @@
     {
       "title": "Vegan",
       "id": 4
+    },
+    {
+      "title": "Other",
+      "id": 5
     }
   ]
 }
