@@ -24,13 +24,13 @@ categoryForm: FormGroup = new FormGroup({});
     });
   }
 
-  addCategory() {
+  public addCategory(): void {
     this.service.addCategory(this.categoryForm.value).subscribe(() => {
       this.service.updateCategories.next();
     });
   }
 
-  closeDialog(): void {
+  public closeDialog(): void {
     this.dialogRef.close();
   }
 
