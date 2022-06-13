@@ -21,7 +21,7 @@
       <tr *ngFor="let dish of dishes">
         <td>{{ dish.title }}</td>
         <td>{{ dish.discription }}</td>
-        <td>${{ dish.price }}</td>
+        <td>${{ dish.price }}.00</td>
         <td><a mat-button (click)="openDialog(dish.id)">View details</a></td>
         <td><a mat-button (click)="deleteDish(dish.id)">DELETE</a></td>
       </tr>
