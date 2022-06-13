@@ -4,4 +4,5 @@ export class Dish {
   discription!: string;
   price!: number;
   categoryId!: number;
+  image?: string;
 }
