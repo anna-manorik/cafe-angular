@@ -1,21 +1,30 @@
-.header-conteiner{
-    width: 1200px;
-    text-align: center;
-    padding: 20px;
-    margin: 0 auto;
-    border: 1px solid rgb(218, 217, 217);
-    border-radius: 5px;
-    background-color: #e8ddee;
+.header-conteiner {
+  width:1200px;
+  text-align: center;
+  padding: 20px;
+  margin: 0 auto;
+  border: 1px solid rgb(218, 217, 217);
+  border-radius: 5px;
+  background-color: #e8ddee;
 }
 
-.header-conteiner ul{
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
+.header-conteiner ul {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 20px 0;
+  padding: 0;
 }
 
-.header-conteiner li{
-    list-style: none;
-    margin: 5px;
+.header-conteiner li {
+  list-style: none;
+  margin: 5px;
 }
+
+::ng-deep .mat-form-field-label .label-search {
+  color: #560977 !important;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: #560977 !important;
+}
+
