@@ -1,34 +1,36 @@
 <div class="dish-adding-modal-conteiner">
   <h1 mat-dialog-title>Add new dish</h1>
-  <div class="dish-adding-modal-inputs">
-    <mat-form-field appearance="fill">
-      <mat-label>Name: </mat-label>
-      <input matInput [(ngModel)]="dish.title" />
-    </mat-form-field>
+    <form [formGroup]="dishForm" class="dish-adding-modal-inputs">
+      <mat-form-field appearance="fill">
+        <mat-label>Name: </mat-label>
+        <input matInput formControlName="title" />
+        <div *ngIf="!title?.value">Please provide a dish name.</div>
+      </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Price: $ </mat-label>
-      <input matInput [(ngModel)]="dish.price" />
-    </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Price: </mat-label>
+        <input matInput formControlName="price" pattern="^[0-9]{1,4}" />
+        <div *ngIf="!price?.value">Please provide a dish price.</div>
+      </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Category: </mat-label>
-      <mat-select [(ngModel)]="dish.categoryId">
-        <mat-option *ngFor="let category of categories" [value]="category.id">
-          {{ category.title }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Category: </mat-label>
+        <mat-select formControlName="categoryId">
+          <mat-option *ngFor="let category of categories" [value]="category.id">
+            {{ category.title }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Info: </mat-label>
-      <textarea matInput [(ngModel)]="dish.discription"></textarea>
-    </mat-form-field>
-  </div>
+      <mat-form-field appearance="fill">
+        <mat-label>Info: </mat-label>
+        <textarea matInput formControlName="discription"></textarea>
+      </mat-form-field>
 
-  <div mat-dialog-actions>
-    <button mat-raised-button color="warn" mat-dialog-close (click)="addDish()">
-      Add New Dish
-    </button>
-  </div>
+      <div mat-dialog-actions>
+        <button mat-raised-button color="warn" mat-dialog-close [disabled]="dishForm.invalid" (click)="addDish()">
+          Add New Dish
+        </button>
+      </div>
+    </form>
 </div>
