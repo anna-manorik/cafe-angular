@@ -1,7 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { DataService } from '../../../core/services/data.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ReplaySubject, takeUntil } from 'rxjs';
+import { Subject, takeUntil } from 'rxjs';
+import { Dish } from 'src/app/shared/classes/dish/dish';
 
 @Component({
   selector: 'dish-info-modal',
@@ -10,9 +11,8 @@ import { ReplaySubject, takeUntil } from 'rxjs';
 })
 
 export class DishInfoModal {
-  // dishId: number = 0;
-  dishInfo: any;
-  destroy: ReplaySubject<any> = new ReplaySubject<any>(1);
+  dishInfo!: Dish;
+  destroy: Subject<void> = new Subject<void>();
 
   constructor(public service: DataService, public dialogRef: MatDialogRef<DishInfoModal>, @Inject(MAT_DIALOG_DATA) public dishId: number) {}
 
@@ -23,11 +23,11 @@ export class DishInfoModal {
   }
 
   ngOnDestroy() {
-    this.destroy.next(null);
+    this.destroy.next();
     this.destroy.complete();
   }
 
-  closeDialog(): void {
+  public closeDialog(): void {
     this.dialogRef.close();
   }
 }
