@@ -69,20 +69,6 @@
       "id": 15
     },
     {
-      "title": "Milk",
-      "discription": "Cold milk",
-      "price": "5",
-      "categoryId": 3,
-      "id": 16
-    },
-    {
-      "title": "Dish 1",
-      "price": "7",
-      "categoryId": 5,
-      "discription": "Dish 1 info",
-      "id": 20
-    },
-    {
       "title": "Juice",
       "price": "4",
       "categoryId": 3,
@@ -95,6 +81,13 @@
       "categoryId": 1,
       "discription": "Rabbit with potato",
       "id": 22
+    },
+    {
+      "title": "Milk",
+      "price": "5",
+      "categoryId": 3,
+      "discription": "Milk cold",
+      "id": 23
     }
   ],
   "categories": [
