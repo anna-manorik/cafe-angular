@@ -44,7 +44,7 @@ export class DataService {
     return this.http.post<void>('http://localhost:3000/dishes', dishForm);
   }
 
-  public deleteDish(dishId: number): Observable<void> {
+  public deleteDish(dishId: number | undefined): Observable<void> {
     return this.http.delete<void>(`http://localhost:3000/dishes/${dishId}`);
   }
 
