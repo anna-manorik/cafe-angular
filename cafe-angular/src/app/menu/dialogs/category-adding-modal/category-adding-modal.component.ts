@@ -1,7 +1,7 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../../core/services/data.service';
-import { MatDialogRef, MatDialogConfig } from '@angular/material/dialog';
-import { Category } from '../../../shared/classes/category/category';
+import { MatDialogRef } from '@angular/material/dialog';
+import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 
 @Component({
   selector: 'category-adding-modal',
@@ -9,21 +9,32 @@ import { Category } from '../../../shared/classes/category/category';
   styleUrls: ['./category-adding-modal.component.css'],
 })
 
-export class CategoryAddingModal {
-category = new Category();
+export class CategoryAddingModal implements OnInit {
+categoryForm: FormGroup = new FormGroup({});
 
   constructor(
     public service: DataService,
-    public dialogRef: MatDialogRef<CategoryAddingModal>
+    public dialogRef: MatDialogRef<CategoryAddingModal>,
+    private fb: FormBuilder,
   ) {}
 
+  ngOnInit() {
+    this.categoryForm = this.fb.group({
+      title: ['', Validators.required],
+    });
+  }
+
   addCategory() {
-    this.service.addCategory(this.category).subscribe(() => {
+    this.service.addCategory(this.categoryForm.value).subscribe(() => {
       this.service.updateCategories.next();
     });
   }
 
   closeDialog(): void {
     this.dialogRef.close();
+  }
+
+  get title(): AbstractControl {
+    return this.categoryForm.get('title') as AbstractControl;
   }
 }
