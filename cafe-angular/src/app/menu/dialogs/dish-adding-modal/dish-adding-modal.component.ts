@@ -34,7 +34,7 @@ export class DishAddingModal implements OnInit, OnDestroy {
       });
 
     this.dishForm = new FormGroup({
-      title: new FormControl('', [Validators.required, Validators.pattern('^[a-z0-9_-]{1,50}$'), Validators.maxLength(5)]),
+      title: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z_-]{1,50}$'), Validators.maxLength(5)]),
       price: new FormControl('', Validators.required),
       categoryId: new FormControl(),
       discription: new FormControl(),
@@ -46,21 +46,21 @@ export class DishAddingModal implements OnInit, OnDestroy {
     this.destroy.complete();
   }
 
-  addDish() {
+  public addDish(): void {
     this.service.addDish(this.dishForm.value).subscribe(() => {
       this.service.updateDishes.next();
     });
   }
 
-  closeDialog(): void {
+  public closeDialog(): void {
     this.dialogRef.close();
   }
 
-  get title(): AbstractControl {
+  public get title(): AbstractControl {
     return this.dishForm.get('title') as AbstractControl;
   }
 
-  get price(): AbstractControl {
+  public get price(): AbstractControl {
     return this.dishForm.get('price') as AbstractControl;
   }
 }
