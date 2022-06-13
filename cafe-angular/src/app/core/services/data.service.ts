@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Category } from '../../shared/classes/category/category';
-import { Dish } from '../../shared/classes/dish/dish';
-import { Subject, BehaviorSubject } from 'rxjs';
+import { Subject, BehaviorSubject, Observable } from 'rxjs';
+import { Dish } from 'src/app/shared/classes/dish/dish';
+import { Category } from 'src/app/shared/classes/category/category';
 
 @Injectable({
   providedIn: 'root',
@@ -12,38 +12,43 @@ export class DataService {
 
   updateCategories = new Subject<void>();
   updateDishes = new Subject<void>();
+  searchDishes = new Subject<string>();
 
-  getCategories() {
-    return this.http.get('http://localhost:3000/categories');
+  public getCategories(): Observable<Category[]> {
+    return this.http.get<Category[]>('http://localhost:3000/categories');
   }
 
-  getCategoryById(categoryId: number) {
-    return this.http.get(`http://localhost:3000/categories?id=${categoryId}`);
+  public getCategoryById(categoryId: number): Observable<Category> {
+    return this.http.get<Category>(`http://localhost:3000/categories?id=${categoryId}`);
   }
 
-  getAllDishes() {
-    return this.http.get('http://localhost:3000/dishes');
+  public getAllDishes(): Observable<Dish[]> {
+    return this.http.get<Dish[]>('http://localhost:3000/dishes');
   }
 
-  getDishes(categoryId: number) {
-    return this.http.get(
+  public getDishes(categoryId: number): Observable<Dish[]> {
+    return this.http.get<Dish[]>(
       `http://localhost:3000/dishes?categoryId=${categoryId}`
     );
   }
 
-  getDishInfo(dishId: number) {
-    return this.http.get(`http://localhost:3000/dishes?id=${dishId}`);
+  public getDishInfo(dishId: number): Observable<Dish> {
+    return this.http.get<Dish>(`http://localhost:3000/dishes?id=${dishId}`);
   }
 
-  addCategory(categoryForm: Category) {
-    return this.http.post('http://localhost:3000/categories', categoryForm);
+  public addCategory(categoryForm: Category): Observable<void> {
+    return this.http.post<void>('http://localhost:3000/categories', categoryForm);
   }
 
-  addDish(dishForm: Dish) {
-    return this.http.post('http://localhost:3000/dishes', dishForm);
+  public addDish(dishForm: Dish): Observable<void> {
+    return this.http.post<void>('http://localhost:3000/dishes', dishForm);
   }
 
-  deleteDish(dishId: number) {
-    return this.http.delete(`http://localhost:3000/dishes/${dishId}`);
+  public deleteDish(dishId: number): Observable<void> {
+    return this.http.delete<void>(`http://localhost:3000/dishes/${dishId}`);
+  }
+
+  public searchDish(searchValue: string): Observable<Dish[]> {
+    return this.http.get<Dish[]>(`http://localhost:3000/dishes?title_like=${searchValue}`);
   }
 }
