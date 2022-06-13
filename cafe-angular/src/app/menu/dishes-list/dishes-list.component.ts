@@ -24,9 +24,6 @@ export class DishesList implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    // console.log(this.activatedRoute.snapshot.params['id'])
-    // console.log('this.router.url', this.router.url)
-
     if (this.router.url === '/all-dishes') {
       this.getAllDishes();
 
@@ -41,7 +38,7 @@ export class DishesList implements OnInit, OnDestroy {
             });
         });
 
-      const switched = this.service.searchDishes.pipe(
+      this.service.searchDishes.pipe(
         switchMap((searchValue) =>
           of(
             this.service
@@ -54,7 +51,6 @@ export class DishesList implements OnInit, OnDestroy {
         )
       );
       
-      // switched.subscribe(x => console.log(x));
     } else {
       const categoryId: number = this.activatedRoute.snapshot.params['id'];
       this.getDishes(categoryId);
