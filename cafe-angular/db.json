@@ -76,13 +76,6 @@
       "id": 16
     },
     {
-      "title": "Potato",
-      "price": "5",
-      "categoryId": 4,
-      "discription": null,
-      "id": 19
-    },
-    {
       "title": "Dish 1",
       "price": "7",
       "categoryId": 5,
@@ -124,6 +117,10 @@
     {
       "title": "Other",
       "id": 5
+    },
+    {
+      "title": "Fried",
+      "id": 6
     }
   ]
 }
