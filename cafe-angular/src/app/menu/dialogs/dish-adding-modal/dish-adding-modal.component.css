@@ -9,9 +9,14 @@
 .dish-adding-modal-inputs {
   display: flex;
   flex-direction: column;
+  width: 300px;
 }
 
 ::ng-deep .mat-focused .mat-form-field-label {
+  color: #e8ddee !important;
+}
+
+::ng-deep .mat-focused .mat-form-field-caret {
   color: #e8ddee !important;
 }
 
